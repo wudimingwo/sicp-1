@@ -15,6 +15,6 @@
 (define (accumulate combiner null-value term a next b)
   (define (iter a result)
     (if (> a b)
-      null-value
+      null-value ; 这里应该是 result 吧?
       (iter (next a) (combiner (term a) result))))
   (iter a null-value))
